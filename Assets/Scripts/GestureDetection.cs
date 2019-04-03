@@ -176,7 +176,9 @@ public class GestureDetection : MonoBehaviour {
                 right.transform.GetChild(1).gameObject.GetComponent<Renderer>().material = red;
             }
         }
-        if (leftMatch && rightMatch)
+        if (leftMatch && rightMatch
+            || leftMatch && right == null
+            || rightMatch && left == null)
         {
             both = true;
         } else
