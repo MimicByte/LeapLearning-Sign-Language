@@ -32,20 +32,22 @@ public class RunPractice : MonoBehaviour {
             Destroy(GameObject.FindGameObjectWithTag("left"));
             Destroy(GameObject.FindGameObjectWithTag("right"));
 
-            if (signsL[index] != null)
-            {
-                Instantiate(signsL[index]);
-            }
-            if (signsR[index] != null)
-            {
-                Instantiate(signsR[index]);
-            }
-            wait += 1;
-            if (wait > 5)
-            {
-                wait = 0;
-                index += 1;
-                
+            if (!(index >= signsL.Count)) {
+                if (signsL[index] != null)
+                {
+                    Instantiate(signsL[index]);
+                }
+                if (signsR[index] != null)
+                {
+                    Instantiate(signsR[index]);
+                }
+                wait += 1;
+                if (wait > 5)
+                {
+                    wait = 0;
+                    index += 1;
+
+                }
             }
         }
 	}
